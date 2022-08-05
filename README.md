@@ -26,6 +26,25 @@ Zerotier 在多设备之间建立了一个 `Peer to Peer VPN（P2PVPN）` 连接
 ##  3.1：准备条件
 - 具有公网 `ip` 的服务器（需要开放 3443/tcp 端口，9993/tcp 端口，9993/udp 端口）
 - 安装 `docker`
+
+###  3.1.1 首先安装docker
+```
+curl -sSL https://get.daocloud.io/docker | sh
+systemctl start docker
+```
+
+等待一段时间，出现如下字样代表安装成功
+
+###  3.1.2 安装 docker-compose
+```
+sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+```
+
+等待一段时间，出现如下字样代表安装成功
+
   
 ## 3.2：下载项目源码
 ```
